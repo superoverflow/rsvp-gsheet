@@ -80,7 +80,9 @@ const Rsvp = () => {
     >
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
       <Stack>
-        <Text m="lg" tt="uppercase" fw={700} >24 Jan 23 ❤️ Save the day</Text>
+        <Text m="lg" tt="uppercase" fw={700}>
+          24 Jan 23 ❤️ Save the day
+        </Text>
         <Space h={150} />
         <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
           <TextInput
@@ -110,7 +112,9 @@ const Rsvp = () => {
           />
 
           <Group position="right" mt="md">
-            <Button variant="light" type="submit">Thank you!</Button>
+            <Button variant="light" type="submit">
+              Thank you!
+            </Button>
           </Group>
         </form>
         {submitForm.isSuccess ? <SubmitSuccessAlert /> : null}
