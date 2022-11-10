@@ -8,6 +8,7 @@ import {
   Group,
   Center,
   LoadingOverlay,
+  Space
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useMutation } from "react-query";
@@ -51,8 +52,16 @@ const Rsvp: NextPage = () => {
   });
 
   return (
-    <Center sx={{ width: 600, height: 800  }} mx="auto">
+    <Center
+      sx={{
+        height: 800,
+        backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("background.jpg")`,
+        backgroundSize: "cover",
+      }}
+      mx="auto"
+    >
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
+      <Space h={600} />
       <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
         <TextInput
           withAsterisk
@@ -74,7 +83,7 @@ const Rsvp: NextPage = () => {
         />
 
         <Textarea
-          label="message"
+          label="Message"
           placeholder="仲有乜想講？"
           minRows={4}
           {...form.getInputProps("message")}
