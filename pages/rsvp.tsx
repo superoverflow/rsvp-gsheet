@@ -51,7 +51,7 @@ const Rsvp: NextPage = () => {
   });
 
   return (
-    <Center sx={{ maxWidth: 300 }} mx="auto">
+    <Center sx={{ width: 600, height: 800  }} mx="auto">
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
       <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
         <TextInput
