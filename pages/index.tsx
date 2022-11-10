@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Tiffany & Cyrus | 24/01/23</title>
-        <meta property="og:title" content="Please join us - 24 Jan 2023" />
+        <meta property="og:title" content="You are invited! 24 Jan 2023" />
         <meta property="og:image" content="og.jpg" />
 
         <link
