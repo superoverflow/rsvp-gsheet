@@ -72,7 +72,7 @@ const Rsvp = () => {
   return (
     <Center
       sx={{
-        width: "20%",
+        width: 500,
         backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("background.jpg")`,
         backgroundSize: "cover",
       }}
