@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import {
   TextInput,
   Textarea,
@@ -8,9 +7,11 @@ import {
   Group,
   Center,
   LoadingOverlay,
-  Space
+  Space,
+  Alert,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { IconAlertCircle } from "@tabler/icons";
 import { useMutation } from "react-query";
 
 export type SheetForm = {
@@ -18,6 +19,21 @@ export type SheetForm = {
   attend: boolean;
   guests: number;
   message: string;
+};
+
+const SubmitSuccessAlert = () => {
+  return (
+    <Alert icon={<IconAlertCircle size={16} />} title="Got it!" color="teal">
+      Thanks! I will get back to you soon 😘
+    </Alert>
+  );
+};
+const SubmitErrorAlert = () => {
+  return (
+    <Alert icon={<IconAlertCircle size={16} />} title="Oh snap..." color="red">
+      Sorry! I didn&apos;t get your response. Please contact me 🙏🏻
+    </Alert>
+  );
 };
 
 const handleSubmit = async (values: SheetForm) => {
@@ -33,7 +49,7 @@ const handleSubmit = async (values: SheetForm) => {
   console.log({ content });
 };
 
-const Rsvp: NextPage = () => {
+const Rsvp = () => {
   const form = useForm({
     initialValues: {
       name: "",
@@ -54,14 +70,14 @@ const Rsvp: NextPage = () => {
   return (
     <Center
       sx={{
-        height: 800,
+        width: "20%",
         backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("background.jpg")`,
         backgroundSize: "cover",
       }}
       mx="auto"
     >
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
-      <Space h={600} />
+      <Space h={800} />
       <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
         <TextInput
           withAsterisk
@@ -92,7 +108,8 @@ const Rsvp: NextPage = () => {
         <Group position="right" mt="md">
           <Button type="submit">Thank you!</Button>
         </Group>
-        {submitForm.isSuccess ? <div>Got it!</div> : null}
+        {submitForm.isSuccess ? <SubmitSuccessAlert /> : null}
+        {submitForm.isError ? <SubmitSuccessAlert /> : null}
       </form>
     </Center>
   );
