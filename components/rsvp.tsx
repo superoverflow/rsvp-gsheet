@@ -9,6 +9,8 @@ import {
   LoadingOverlay,
   Space,
   Alert,
+  Stack,
+  Text,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconAlertCircle } from "@tabler/icons";
@@ -77,40 +79,44 @@ const Rsvp = () => {
       mx="auto"
     >
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
-      <Space h={800} />
-      <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
-        <TextInput
-          withAsterisk
-          label="Name"
-          placeholder="高姓大名"
-          {...form.getInputProps("name")}
-        />
+      <Stack>
+        <Text m="lg" tt="uppercase" fw={700} >24 Jan 23 ❤️ Save the day</Text>
+        <Space h={150} />
+        <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
+          <TextInput
+            withAsterisk
+            label="Name"
+            placeholder="高姓大名"
+            {...form.getInputProps("name")}
+          />
 
-        <Checkbox
-          mt="md"
-          label="我會出席！"
-          {...form.getInputProps("attend", { type: "checkbox" })}
-        />
+          <Checkbox
+            mt="md"
+            label="我會出席！"
+            {...form.getInputProps("attend", { type: "checkbox" })}
+          />
 
-        <NumberInput
-          label="No. of guests"
-          placeholder="幾位？"
-          {...form.getInputProps("guests")}
-        />
+          <NumberInput
+            label="No. of guests"
+            placeholder="幾位？"
+            {...form.getInputProps("guests")}
+          />
 
-        <Textarea
-          label="Message"
-          placeholder="仲有乜想講？"
-          minRows={4}
-          {...form.getInputProps("message")}
-        />
+          <Textarea
+            label="Message"
+            placeholder="仲有乜想講？"
+            minRows={4}
+            {...form.getInputProps("message")}
+          />
 
-        <Group position="right" mt="md">
-          <Button type="submit">Thank you!</Button>
-        </Group>
+          <Group position="right" mt="md">
+            <Button variant="light" type="submit">Thank you!</Button>
+          </Group>
+        </form>
         {submitForm.isSuccess ? <SubmitSuccessAlert /> : null}
-        {submitForm.isError ? <SubmitSuccessAlert /> : null}
-      </form>
+        {submitForm.isError ? <SubmitErrorAlert /> : null}
+        <Space h={50} />
+      </Stack>
     </Center>
   );
 };
