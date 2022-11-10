@@ -81,7 +81,7 @@ const Rsvp = () => {
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
       <Stack>
         <Text m="lg" tt="uppercase" fw={700}>
-          24 Jan 23 ❤️ Save the day
+          24 Jan 23 ❤️ Save the date
         </Text>
         <Space h={150} />
         <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
