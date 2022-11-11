@@ -70,14 +70,7 @@ const Rsvp = () => {
   });
 
   return (
-    <Center
-      sx={{
-        width: 400,
-        backgroundImage: `linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("background.jpg")`,
-        backgroundSize: "cover",
-      }}
-      mx="auto"
-    >
+    <Center sx={{ width: "100%"}}>
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
       <Stack>
         <Text m="lg" tt="uppercase" fw={700}>
@@ -119,7 +112,7 @@ const Rsvp = () => {
         </form>
         {submitForm.isSuccess ? <SubmitSuccessAlert /> : null}
         {submitForm.isError ? <SubmitErrorAlert /> : null}
-        <Space h={50} />
+        <Space h={110} />
       </Stack>
     </Center>
   );
