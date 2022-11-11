@@ -20,4 +20,5 @@ body {
   background-size: 30rem;
   background-repeat: no-repeat;
   background-position: center;
+  box-shadow: 0 0 30px 30px white inset;
 }
