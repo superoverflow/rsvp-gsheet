@@ -8,12 +8,12 @@ import {
   Center,
   LoadingOverlay,
   Space,
-  Alert,
+  Notification,
   Stack,
   Text,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import { IconAlertCircle } from "@tabler/icons";
+import { IconCheck, IconX } from "@tabler/icons";
 import { useMutation } from "react-query";
 
 export type SheetForm = {
@@ -25,16 +25,21 @@ export type SheetForm = {
 
 const SubmitSuccessAlert = () => {
   return (
-    <Alert icon={<IconAlertCircle size={16} />} title="Got it!" color="teal">
+    <Notification disallowClose icon={<IconCheck size={18} />} color="teal">
       Thanks! I will get back to you soon 😘
-    </Alert>
+    </Notification>
   );
 };
 const SubmitErrorAlert = () => {
   return (
-    <Alert icon={<IconAlertCircle size={16} />} title="Oh snap..." color="red">
-      Sorry! I didn&apos;t get your response. Please contact me 🙏🏻
-    </Alert>
+    <Notification
+      disallowClose
+      icon={<IconX size={18} />}
+      color="red"
+      title="Aw, snap!"
+    >
+      Tell me that it didn&apos;t work
+    </Notification>
   );
 };
 
@@ -70,13 +75,13 @@ const Rsvp = () => {
   });
 
   return (
-    <Center sx={{ width: "100%"}}>
+    <Center>
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
       <Stack>
-        <Text m="lg" tt="uppercase" fw={700}>
+        <Text m="lg" tt="uppercase" fw={700} align="center">
           24 Jan 23 ❤️ Save the date
         </Text>
-        <Space h={150} />
+        <Space h={135} />
         <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
           <TextInput
             withAsterisk
@@ -109,10 +114,16 @@ const Rsvp = () => {
               Thank you!
             </Button>
           </Group>
+          <Space />
         </form>
-        {submitForm.isSuccess ? <SubmitSuccessAlert /> : null}
-        {submitForm.isError ? <SubmitErrorAlert /> : null}
-        <Space h={110} />
+        {submitForm.isSuccess ? (
+          <SubmitSuccessAlert />
+        ) : submitForm.isError ? (
+          <SubmitErrorAlert />
+        ) : (
+          <Space h={60} />
+        )}
+        <Space h={60} />
       </Stack>
     </Center>
   );
