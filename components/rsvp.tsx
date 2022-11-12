@@ -126,13 +126,14 @@ const Rsvp = () => {
             </Group>
           </form>
         </Box>
-        {!submitForm.isSuccess ? (
+        {submitForm.isSuccess ? (
           <SubmitSuccessAlert />
         ) : submitForm.isError ? (
           <SubmitErrorAlert />
         ) : (
           <Space h={80} />
         )}
+        <Space h={20} />
       </Stack>
     </Center>
   );
