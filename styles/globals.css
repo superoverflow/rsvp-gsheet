@@ -4,6 +4,16 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-image: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url("/background.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 0 50px 50px white inset;
 }
 
 a {
@@ -13,12 +23,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-body {
-  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("/background.jpg");
-  background-size: 30rem;
-  background-repeat: no-repeat;
-  background-position: center;
-  box-shadow: 0 0 30px 30px white inset;
 }

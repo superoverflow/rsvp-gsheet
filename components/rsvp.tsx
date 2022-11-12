@@ -27,7 +27,7 @@ export type SheetForm = {
 const SubmitSuccessAlert = () => {
   return (
     <Notification disallowClose icon={<IconCheck size={18} />} color="teal">
-      Thanks! I will get back to you soon 😘
+      Thanks! Will get back to you 😘
     </Notification>
   );
 };
@@ -91,7 +91,7 @@ const Rsvp = () => {
           </Text>
         </Box>
         <Box mt="lg" mb="sm">
-          <Space h={150} />
+          <Space h={75} />
           <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
             <TextInput
               withAsterisk
@@ -131,9 +131,8 @@ const Rsvp = () => {
         ) : submitForm.isError ? (
           <SubmitErrorAlert />
         ) : (
-          <Space h={80} />
+          <Space h={50} />
         )}
-        <Space h={20} />
       </Stack>
     </Center>
   );
