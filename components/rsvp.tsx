@@ -3,6 +3,7 @@ import {
   Textarea,
   Checkbox,
   Button,
+  Box,
   NumberInput,
   Group,
   Center,
@@ -78,52 +79,60 @@ const Rsvp = () => {
     <Center>
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
       <Stack>
-        <Text m="lg" tt="uppercase" fw={700} align="center">
-          24 Jan 23 ❤️ Save the date
-        </Text>
-        <Space h={135} />
-        <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
-          <TextInput
-            withAsterisk
-            label="Name"
-            placeholder="高姓大名"
-            {...form.getInputProps("name")}
-          />
+        <Box mt="sm">
+          <Text tt="uppercase" fw={500} align="center" color="navy">
+            24 Jan 2023 ❤️ Save the date
+          </Text>
+          <Text fw={500} align="center" color="navy">
+            Hyatt Centric 🏨 1 North Point Estate Ln
+          </Text>
+          <Text fw={500} align="center" color="navy">
+            11:30 Welcome 💁🏻‍♂️ 12:30 Cocktail 🥂
+          </Text>
+        </Box>
+        <Box mt="lg" mb="sm">
+          <Space h={150} />
+          <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
+            <TextInput
+              withAsterisk
+              label="Name"
+              placeholder="高姓大名"
+              {...form.getInputProps("name")}
+            />
 
-          <Checkbox
-            mt="md"
-            label="我會出席！"
-            {...form.getInputProps("attend", { type: "checkbox" })}
-          />
+            <Checkbox
+              mt="md"
+              label="我會出席！"
+              {...form.getInputProps("attend", { type: "checkbox" })}
+            />
 
-          <NumberInput
-            label="No. of guests"
-            placeholder="幾位？"
-            {...form.getInputProps("guests")}
-          />
+            <NumberInput
+              label="No. of guests"
+              placeholder="幾位？"
+              {...form.getInputProps("guests")}
+            />
 
-          <Textarea
-            label="Message"
-            placeholder="仲有乜想講？"
-            minRows={4}
-            {...form.getInputProps("message")}
-          />
+            <Textarea
+              label="Message"
+              placeholder="仲有乜想講？"
+              minRows={4}
+              {...form.getInputProps("message")}
+            />
 
-          <Group position="right" mt="md">
-            <Button variant="light" type="submit">
-              Thank you!
-            </Button>
-          </Group>
-          <Space />
-        </form>
-        {submitForm.isSuccess ? (
+            <Group position="right" mt="md">
+              <Button variant="light" type="submit">
+                Thank you!
+              </Button>
+            </Group>
+          </form>
+        </Box>
+        {!submitForm.isSuccess ? (
           <SubmitSuccessAlert />
         ) : submitForm.isError ? (
           <SubmitErrorAlert />
         ) : (
-          <Space h={60} />
+          <Space h={80} />
         )}
-        <Space h={60} />
       </Stack>
     </Center>
   );
