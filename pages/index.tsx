@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Envelop from "../components/Envelope";
-import { IconHeart } from "@tabler/icons"
+import Envelope from "../components/Envelope";
+import { IconArrowDown } from "@tabler/icons";
 
 const Home: NextPage = () => {
   return (
@@ -17,7 +17,9 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <Envelop />
+      <Envelope>
+        <IconArrowDown />
+      </Envelope>
     </>
   );
 };
