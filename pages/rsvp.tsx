@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Envelop from "../components/Envelope";
-import { IconHeart } from "@tabler/icons"
+import RsvpForm from "../components/rsvp";
 
-const Home: NextPage = () => {
+const Rsvp: NextPage = () => {
   return (
     <>
       <Head>
@@ -17,9 +16,9 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <Envelop />
+      <RsvpForm />
     </>
   );
 };
 
-export default Home;
+export default Rsvp;

@@ -3,15 +3,11 @@ import {
   Textarea,
   Checkbox,
   Button,
-  Box,
   NumberInput,
   Group,
   Center,
   LoadingOverlay,
-  Space,
   Notification,
-  Stack,
-  Text,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconCheck, IconX } from "@tabler/icons";
@@ -78,20 +74,6 @@ const Rsvp = () => {
   return (
     <Center>
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
-      <Stack>
-        <Box mt="sm">
-          <Text tt="uppercase" fw={500} align="center" color="navy">
-            24 Jan 2023 ❤️ Save the date
-          </Text>
-          <Text fw={500} align="center" color="navy">
-            Hyatt Centric 🏨 1 North Point Estate Ln
-          </Text>
-          <Text fw={500} align="center" color="navy">
-            11:30 Welcome 💁🏻‍♂️ 12:30 Cocktail 🥂
-          </Text>
-        </Box>
-        <Box mt="lg" mb="sm">
-          <Space h={75} />
           <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
             <TextInput
               withAsterisk
@@ -125,15 +107,6 @@ const Rsvp = () => {
               </Button>
             </Group>
           </form>
-        </Box>
-        {submitForm.isSuccess ? (
-          <SubmitSuccessAlert />
-        ) : submitForm.isError ? (
-          <SubmitErrorAlert />
-        ) : (
-          <Space h={50} />
-        )}
-      </Stack>
     </Center>
   );
 };
