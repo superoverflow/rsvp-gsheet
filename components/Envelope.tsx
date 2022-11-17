@@ -1,22 +1,23 @@
 import styles from "./Envolope.module.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-type KeyFrames = [number, number, number, number, number]
+type KeyFrames = [number, number, number, number, number, number];
 
 const Envelope = ({ children }: { children?: JSX.Element }) => {
   const { scrollYProgress } = useScroll();
-  const scrollKeyFrames: KeyFrames = [
-    0, 0.25, 0.5, 0.75, 1,
-  ];
+  const scrollKeyFrames: KeyFrames = [0, 0.2, 0.4, 0.6, 0.8, 1];
   const useAnimation = (values: KeyFrames) =>
     useTransform(scrollYProgress, scrollKeyFrames, values);
 
-  const envelopePos = useAnimation([0, 0, 0, 0, 800]);
-  const closedLidRotate = useAnimation([0, 90, 90, 90, 90]);
-  const openedLidRotate = useAnimation([90, 90, 180, 180, 180]);
-  const letterYPos = useAnimation([0, 0, 0, 0, -800]);
-  const letterScale = useAnimation([.5, .5, .5, .5, 1]);
-  const letterDegree = useAnimation([-90, -90, -90, -90, 0]);
+  const envelopePos = useAnimation([0, 0, 0, 0, 800, 800]);
+  const letterYPos = useAnimation([0, 0, 0, 0, -800, -800]);
+
+  const closedLidRotate = useAnimation([0, 90, 90, 90, 90, 90]);
+  const openedLidRotate = useAnimation([90, 90, 180, 180, 180, 180]);
+
+  const letterScale = useAnimation([0.5, 0.5, 0.5, 0.5, 1, 1]);
+  const letterDegree = useAnimation([-90, -90, -90, -90, 0, 0]);
+  const letterOpacity = useAnimation([0, 0, 0, 0, 0, 1]);
 
   return (
     <motion.div
@@ -50,7 +51,12 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
           rotateZ: letterDegree,
         }}
       >
-        {children}
+        <motion.div style={{
+          width: "90%",
+          height: "90%",
+          display: "flex",
+          opacity: letterOpacity
+        }}>{children}</motion.div>
       </motion.div>
       <motion.div className={styles.front} />
     </motion.div>

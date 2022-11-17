@@ -72,7 +72,7 @@ const Rsvp = () => {
   });
 
   return (
-    <Center>
+    <Center style={{ border: "1px solid red", padding: "20px"}}>
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
           <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>
             <TextInput

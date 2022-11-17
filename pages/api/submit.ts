@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import {google} from "googleapis";
-import { SheetForm } from "../../components/rsvp";
+import { SheetForm } from "../../components/Rsvp";
 
 export default async function handler(
     req: NextApiRequest,
