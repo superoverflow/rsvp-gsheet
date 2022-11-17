@@ -87,7 +87,7 @@ const Rsvp = () => {
       }}
     >
       <LoadingOverlay visible={submitForm.isLoading} overlayBlur={2} />
-      <Text fw={600} mt="sm" align="center">
+      <Text style={{ color: "#006994" }} fw={600} mt="sm" align="center">
         24 Jan 2023 💍 Save the date
       </Text>
       <form onSubmit={form.onSubmit((values) => submitForm.mutate(values))}>

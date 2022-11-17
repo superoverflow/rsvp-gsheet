@@ -19,10 +19,10 @@ const Information = () => {
       >
         Tiffany & Cyrus
       </Text>
-      <Text>🗓 24 Jan 2023 🗓</Text>
-      <Text>凱悅尚萃酒店 🏨 北角邨里1號</Text>
-      <Text>11:30 恭候 🕚</Text>
-      <Text>12:30 酒會 🥂</Text>
+      <Text style={{ color: "#006994" }}>🗓 24 Jan 2023 🗓</Text>
+      <Text style={{ color: "#006994" }}>凱悅尚萃酒店 🏨 北角邨里1號</Text>
+      <Text style={{ color: "#006994" }}>11:30 恭候 🕚</Text>
+      <Text style={{ color: "#006994" }}>12:30 酒會 🥂</Text>
 
 
       <Link href="/rsvp">
