@@ -1,7 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
+import { Button } from "@mantine/core";
 import Envelope from "../components/Envelope";
-import { IconArrowDown } from "@tabler/icons";
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +19,14 @@ const Home: NextPage = () => {
       </Head>
 
       <Envelope>
-        <IconArrowDown />
+        <Link href="/rsvp">
+          <Button
+            variant="gradient"
+            gradient={{ from: "#ed6ea0", to: "#ec8c69", deg: 35 }}
+          >
+            RSVP ❤️
+          </Button>
+        </Link>
       </Envelope>
     </>
   );
