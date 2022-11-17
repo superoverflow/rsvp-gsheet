@@ -66,13 +66,13 @@
 }
 
 .letter {
-  height: 180px;
-  width: 280px;
+  height: 504px;
+  width: 324px;
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -90px;
-  margin-left: -140px;
+  margin-top: -252px;
+  margin-left: -162px;
   background-color: rgb(249, 207, 207);
   z-index: 0;
   display: flex;

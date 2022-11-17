@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import styles from "./Envolope.module.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -16,8 +15,8 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
   const closedLidRotate = useAnimation([0, 90, 90, 90, 90]);
   const openedLidRotate = useAnimation([90, 90, 180, 180, 180]);
   const letterYPos = useAnimation([0, 0, 0, 0, -800]);
-  const letterScale = useAnimation([1, 1, 1, 1, 1.5]);
-  const letterDegree = useAnimation([0, 0, 0, 0, 90]);
+  const letterScale = useAnimation([.5, .5, .5, .5, 1]);
+  const letterDegree = useAnimation([-90, -90, -90, -90, 0]);
 
   return (
     <motion.div
