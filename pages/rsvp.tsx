@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Center } from "@mantine/core";
-import RsvpForm from "../components/Rsvp";
+import RsvpForm from "../components/RsvpForm";
 
 const Rsvp: NextPage = () => {
   return (
