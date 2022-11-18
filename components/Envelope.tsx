@@ -20,46 +20,53 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
   const letterOpacity = useAnimation([0, 0, 0, 0, 0, 1]);
 
   return (
-    <motion.div
-      className={styles.wrapper}
-      style={{
-        y: envelopePos,
-      }}
-      transition={{
-        duration: 1,
-      }}
-    >
-      <motion.div className={styles.back} />
+    <>
+      <div style={{ height: "200vh"}}></div>
       <motion.div
-        className={styles.closedLid}
+        className={styles.wrapper}
         style={{
-          rotateX: closedLidRotate,
+          y: envelopePos,
         }}
-      />
-      <motion.div
-        className={styles.openedLid}
-        style={{
-          rotateX: openedLidRotate,
-        }}
-      />
-
-      <motion.div
-        className={styles.letter}
-        style={{
-          y: letterYPos,
-          scale: letterScale,
-          rotateZ: letterDegree,
+        transition={{
+          duration: 1,
         }}
       >
-        <motion.div style={{
-          width: "90%",
-          height: "90%",
-          display: "flex",
-          opacity: letterOpacity
-        }}>{children}</motion.div>
+        <motion.div className={styles.back} />
+        <motion.div
+          className={styles.closedLid}
+          style={{
+            rotateX: closedLidRotate,
+          }}
+        />
+        <motion.div
+          className={styles.openedLid}
+          style={{
+            rotateX: openedLidRotate,
+          }}
+        />
+
+        <motion.div
+          className={styles.letter}
+          style={{
+            y: letterYPos,
+            scale: letterScale,
+            rotateZ: letterDegree,
+          }}
+        >
+          <motion.div
+            style={{
+              width: "90%",
+              height: "90%",
+              display: "flex",
+              opacity: letterOpacity,
+            }}
+          >
+            {children}
+          </motion.div>
+        </motion.div>
+        <motion.div className={styles.front} />
       </motion.div>
-      <motion.div className={styles.front} />
-    </motion.div>
+    </>
   );
 };
 
