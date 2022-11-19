@@ -1,5 +1,7 @@
 import styles from "./Envolope.module.css";
+import { Text } from "@mantine/core";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { ChevronsUp } from "tabler-icons-react";
 
 type KeyFrames = [number, number, number, number, number, number];
 
@@ -25,7 +27,10 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
 
   return (
     <>
+      {/* pseudo element to add scroll space */}
       <div style={{ height: "200vh" }}></div>
+
+      {/* envelope */}
       <motion.div
         onClick={handleClickEnvelope}
         className={styles.wrapper}
@@ -36,6 +41,17 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
           duration: 1,
         }}
       >
+        {/* scroll hint */}
+        <motion.div
+          className={styles.scrollHint}
+          animate={{ y: -10 }}
+          transition={{ type: "spring", stiffness: 500 }}
+        >
+          <ChevronsUp size={20} strokeWidth={2} color={"#862e2d"} />
+          <Text size={15} fw={500} color={"#862e2d"}>
+            Scroll Up
+          </Text>
+        </motion.div>
         <motion.div className={styles.back} />
         <motion.div
           className={styles.closedLid}
@@ -69,6 +85,7 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
             {children}
           </motion.div>
         </motion.div>
+
         <motion.div className={styles.front} />
       </motion.div>
     </>
