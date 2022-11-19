@@ -7,7 +7,7 @@ const Information = () => {
       direction='column'
       align='center'
       gap='md'
-      style={{ backgroundColor: "rgb(255, 255, 255, 0.85)", width: "100%" }}
+      style={{ backgroundColor: "rgb(255, 255, 255)", width: "100%" }}
     >
       <Text
         mt="lg"
