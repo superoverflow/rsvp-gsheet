@@ -17,11 +17,11 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
 
   const letterScale = useAnimation([0.5, 0.5, 0.5, 0.5, 1, 1]);
   const letterDegree = useAnimation([-90, -90, -90, -90, 0, 0]);
-  const letterOpacity = useAnimation([0, 0, 0, 0, 0, 0.9]);
+  const letterOpacity = useAnimation([0, 0, 0, 0, 0, 0.95]);
 
   const handleClickEnvelope = () => {
-    window.scrollTo({ top: window.outerHeight, behavior: "smooth" });
-  }
+    window.scrollTo({ top: window.outerHeight + 100, behavior: "smooth" });
+  };
 
   return (
     <>
