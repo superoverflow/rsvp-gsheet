@@ -15,7 +15,7 @@ yarn run dev
 ```
 
 ## Live Demo
-- [Demo](https://rsvp-gsheet.vercel.app/)
+- [Demo](https://tiffanymarryme.vercel.app/)
 - [GSheet](https://docs.google.com/spreadsheets/d/1kspesLqIszPAM45-Y7d4M10TPKWyBPoGj2xubVYlPsE)
 
 
