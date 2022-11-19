@@ -19,8 +19,9 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
   const letterDegree = useAnimation([-90, -90, -90, -90, 0, 0]);
   const letterOpacity = useAnimation([0, 0, 0, 0, 0, 0.9]);
 
-  const handleClickEnvelope = () =>
-    window.scrollTo({ top: 1500, behavior: "smooth" });
+  const handleClickEnvelope = () => {
+    window.scrollTo({ top: window.outerHeight, behavior: "smooth" });
+  }
 
   return (
     <>
