@@ -49,7 +49,7 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
         >
           <ChevronsUp size={20} strokeWidth={2} color={"#862e2d"} />
           <Text size={15} fw={500} color={"#862e2d"}>
-            Scroll Up
+            Swipe Up
           </Text>
         </motion.div>
         <motion.div className={styles.back} />
