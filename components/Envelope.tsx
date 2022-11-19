@@ -22,7 +22,7 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
   const letterOpacity = useAnimation([0, 0, 0, 0, 0, 0.95]);
 
   const handleClickEnvelope = () => {
-    window.scrollTo({ top: window.outerHeight + 100, behavior: "smooth" });
+    window.scrollTo({ top: window.outerHeight, behavior: "smooth" });
   };
 
   return (
