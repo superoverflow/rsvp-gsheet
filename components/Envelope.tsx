@@ -5,7 +5,7 @@ type KeyFrames = [number, number, number, number, number, number];
 
 const Envelope = ({ children }: { children?: JSX.Element }) => {
   const { scrollYProgress } = useScroll();
-  const scrollKeyFrames: KeyFrames = [0, 0.2, 0.4, 0.6, 0.8, 1];
+  const scrollKeyFrames: KeyFrames = [0, 0.2, 0.4, 0.6, 0.8, 0.95];
   const useAnimation = (values: KeyFrames) =>
     useTransform(scrollYProgress, scrollKeyFrames, values);
 
@@ -19,10 +19,13 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
   const letterDegree = useAnimation([-90, -90, -90, -90, 0, 0]);
   const letterOpacity = useAnimation([0, 0, 0, 0, 0, 1]);
 
+  const handleClickEnvelope = () => window.scrollTo(0, 1500)
+
   return (
     <>
       <div style={{ height: "200vh"}}></div>
       <motion.div
+        onClick={handleClickEnvelope}
         className={styles.wrapper}
         style={{
           y: envelopePos,
