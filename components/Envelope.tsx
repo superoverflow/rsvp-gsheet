@@ -45,7 +45,7 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
         <motion.div
           className={styles.scrollHint}
           animate={{ y: -10 }}
-          transition={{ type: "spring", stiffness: 500 }}
+          transition={{ type: "spring", stiffness: 500, duration: 3 }}
         >
           <ChevronsUp size={20} strokeWidth={2} color={"#862e2d"} />
           <Text size={15} fw={500} color={"#862e2d"}>

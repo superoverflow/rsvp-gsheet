@@ -11,7 +11,7 @@ GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n......\n-----END PRIVATE KEY---
 GOOGLE_SHEET_ID=<google sheet id>
 
 
-yarn dev
+yarn run dev
 ```
 
 ## Live Demo
