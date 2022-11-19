@@ -22,7 +22,7 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
   const letterOpacity = useAnimation([0, 0, 0, 0, 0, 0.95]);
 
   const handleClickEnvelope = () => {
-    window.scrollTo({ top: window.outerHeight, behavior: "smooth" });
+    window.scrollTo({ top: window.outerHeight + 200, behavior: "smooth" });
   };
 
   return (
@@ -44,7 +44,7 @@ const Envelope = ({ children }: { children?: JSX.Element }) => {
         {/* scroll hint */}
         <motion.div
           className={styles.scrollHint}
-          animate={{ y: -10 }}
+          animate={{ y: -20 }}
           transition={{ type: "spring", stiffness: 500, duration: 3 }}
         >
           <ChevronsUp size={20} strokeWidth={2} color={"#862e2d"} />
